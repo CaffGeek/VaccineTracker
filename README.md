@@ -8,7 +8,7 @@ Deployed via GH-Pages to https://caffgeek.github.io/VaccineTracker/
 ```
 git checkout gh-pages
 git merge master
-ng build --prod
+MSYS2_ARG_CONV_EXCL=--base-href= ng build --output-path docs --base-href="/VaccineTracker/"
 git add -A
 git commit -m "publish"
 git push
