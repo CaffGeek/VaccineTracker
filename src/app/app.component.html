@@ -1,6 +1,9 @@
-<div class="example-container mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>    
-    <ng-container matColumnDef="Vaccination_Date">
+<div class="example-container">
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    <ng-container matColumnDef="Vaccination_Date" sticky>
       <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.Vaccination_Date | date}} </mat-cell>
     </ng-container>
@@ -34,10 +37,5 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> Cumulative Total Doses </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.Cumulative_Total_Doses}} </mat-cell>
     </ng-container>
-    
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
-    </mat-row>
-  </table>
-</div> 
+  </mat-table>
+</div>
