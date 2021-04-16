@@ -32,7 +32,7 @@ export class AppComponent {
       .then(data => {
         let records = data
           .features
-            .map(x => ({
+            .map((x, ix, arr) => ({
               Vaccination_Date: new Date(x.attributes.Vaccination_Date),
               First_Doses: x.attributes.First_Doses,
               Second_Doses: x.attributes.Second_Doses,
