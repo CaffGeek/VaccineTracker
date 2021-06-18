@@ -1,13 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CdkTableExporterModule } from 'cdk-table-exporter';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent extends CdkTableExporterModule {
   @ViewChild(MatSort) sort: MatSort;
 
   url = "https://services.arcgis.com/mMUesHYPkXjaFGfS/arcgis/rest/services/mb_covid_vaccinations_daily_cumulative/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Vaccination_Date%20asc&resultOffset=0&resultRecordCount=32000&resultType=standard&cacheHint=true";
@@ -27,6 +28,8 @@ export class AppComponent {
   }
 
   constructor() {
+    super();
+    
     fetch(this.url)
       .then(response => response.json())
       .then(data => {
