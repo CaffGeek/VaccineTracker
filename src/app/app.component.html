@@ -1,5 +1,7 @@
+<button mat-raised-button (click)="exporter.exportTable('csv',{fileName:'footballers_data'})">CSV</button>
+
 <div class="example-container">
-  <mat-table #table [dataSource]="dataSource" matSort>
+  <mat-table #table matTableExporter [dataSource]="dataSource" matSort #exporter="matTableExporter">
     <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
