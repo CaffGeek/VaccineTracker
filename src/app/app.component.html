@@ -20,6 +20,11 @@
       <mat-cell *matCellDef="let row"> {{row.Second_Doses}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="Third_Doses">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Third Doses </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.Third_Doses}} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="Total_Doses">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Total </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.Total_Doses}} </mat-cell>
@@ -33,6 +38,11 @@
     <ng-container matColumnDef="Cumulative_Second_Doses">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Cumulative Second Doses </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.Cumulative_Second_Doses}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Cumulative_Third_Doses">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Cumulative Third Doses </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.Cumulative_Third_Doses}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Cumulative_Total_Doses">
